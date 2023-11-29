@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar Procedimento</title>
+</head>
+<body>
+    <h1>Agendar Procedimento</h1>
+    <form action="/agendar" method="POST">
+        <label for="nomeCliente">Nome do Cliente:</label>
+        <input type="text" name="nomeCliente" required><br>
+        
+        <label for="data">Data:</label>
+        <input type="date" name="data" id="data" required><br>
+
+        <label for="hora">Hora:</label>
+        <select name="hora" id="hora" required>
+            <!-- Opções de horário serão preenchidas dinamicamente via JavaScript -->
+        </select><br>
+        
+        <label for="procedimento">Procedimento:</label>
+        <select name="procedimento" required>
+            <!-- Opções de procedimentos serão preenchidas dinamicamente via JavaScript -->
+        </select><br>
+        
+        <button type="submit">Agendar</button>
+    </form>
+
+    <script>
+        // Preencher dinamicamente as opções de horário
+        const dataInput = document.getElementById('data');
+        const horaSelect = document.getElementById('hora');
+        dataInput.addEventListener('change', async () => {
+            const dataSelecionada = dataInput.value;
+            const response = await fetch(`/horarios-disponiveis/${dataSelecionada}`);
+            const horariosDisponiveis = await response.json();
+
+            // Limpar as opções atuais e adicionar as novas opções
+            horaSelect.innerHTML = '';
+            horariosDisponiveis.forEach(horario => {
+                const option = document.createElement('option');
+                option.value = horario;
+                option.text = horario;
+                horaSelect.add(option);
+            });
+        });
+
+        // Preencher dinamicamente as opções de procedimento
+        const procedimentoSelect = document.querySelector('select[name="procedimento"]');
+        window.addEventListener('DOMContentLoaded', async () => {
+            const response = await fetch('/procedimentos');
+            const procedimentosDisponiveis = await response.json();
+
+            procedimentosDisponiveis.forEach(procedimento => {
+                const option = document.createElement('option');
+                option.value = procedimento;
+                option.text = procedimento;
+                procedimentoSelect.add(option);
+            });
+        });
+    </script>
+
+    <p><a href="/">Voltar para a página inicial</a></p>
+</body>
+</html>
