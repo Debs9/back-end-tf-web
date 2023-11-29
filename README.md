@@ -1,6 +1,11 @@
 # back-end-tf-web
 Back-End do trabalho final da disciplina de WEB
-Débora Marques
-Ana Luiza Ferreira
-Kauan Victor 
-Taiza Nunes
+
+# Nomes
+- [Débora Marques Oliveira](https://github.com/Debs9)
+- [Ana Luiza Ferreira Carvalho](https://github.com/Ananats00)
+- [Kauan Victor dos Santos](https://github.com/KauanVict0r)
+- [Taiza Nunes de Araujo](https://github.com/TaizaArauj0)
+
+# Modelo Conceitual do Banco de Dados
+- ()

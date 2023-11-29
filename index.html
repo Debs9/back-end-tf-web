@@ -1,0 +1,70 @@
+
+const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Conectar ao MongoDB (certifique-se de ter o servidor MongoDB em execução)
+mongoose.connect('mongodb://localhost/agendamento_procedimento_db', { useNewUrlParser: true, useUnifiedTopology: true });
+const db = mongoose.connection;
+
+db.on('error', console.error.bind(console, 'Erro de conexão com o MongoDB:'));
+db.once('open', function () {
+    console.log('Conectado ao MongoDB');
+});
+
+// Definir o modelo de dados para o agendamento
+const agendamentoSchema = new mongoose.Schema({
+    nomeCliente: String,
+    data: Date,
+    hora: String,
+    procedimento: String,
+    // Outros campos relevantes
+});
+
+const Agendamento = mongoose.model('Agendamento', agendamentoSchema);
+
+// Configurar o middleware para analisar o corpo das solicitações
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+// Rota para exibir a página inicial
+app.get('/', (req, res) => {
+    res.send('Bem-vindo ao sistema de agendamento de procedimentos!');
+});
+
+// Rota para exibir a página de agendamento
+app.get('/agendar', (req, res) => {
+    res.send('Página de Agendamento');
+    // Aqui você pode renderizar um formulário HTML para o cliente escolher data, hora e procedimento
+});
+
+// Rota para processar o agendamento
+app.post('/agendar', (req, res) => {
+    const { nomeCliente, data, hora, procedimento } = req.body;
+
+    // Criar um novo agendamento
+    const novoAgendamento = new Agendamento({
+        nomeCliente,
+        data,
+        hora,
+        procedimento,
+    });
+
+    // Salvar no banco de dados
+    novoAgendamento.save((err) => {
+        if (err) {
+            console.error('Erro ao salvar o agendamento:', err);
+            res.status(500).send('Erro ao agendar o procedimento');
+        } else {
+            res.status(200).send('Procedimento agendado com sucesso!');
+        }
+    });
+});
+
+// Iniciar o servidor
+app.listen(PORT, () => {
+    console.log(`Servidor iniciado na porta ${PORT}`);
+});
