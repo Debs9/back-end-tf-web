@@ -10,7 +10,7 @@ Back-End do trabalho final da disciplina de WEB
 
 # Modelo do Banco de Dados
 - [Modelo Conceitual](bd/bd.jpeg)
-= [Modelo Lógico](bd/modelo_logico.png)
+- [Modelo Lógico](bd/modelo_logico.png)
 
 # Documentação
 Salão de Beleza 
