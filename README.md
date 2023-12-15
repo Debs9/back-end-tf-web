@@ -13,5 +13,7 @@ Back-End do trabalho final da disciplina de WEB
 - [Modelo Lógico](bd/modelo_logico.png)
 - [SQL](bd/DDL.sql)
 
+O site utilizado para o desenvolvimento dos modelos foi o BR Modelo Web
+
 # Documentação
 Salão de Beleza 
