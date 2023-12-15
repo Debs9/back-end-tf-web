@@ -8,8 +8,9 @@ Back-End do trabalho final da disciplina de WEB
 - [Taiza Nunes de Araujo](https://github.com/TaizaArauj0)
 - [Maria Isabel Carmo Lopes](https://github.com/izinhah)
 
-# Modelo Conceitual do Banco de Dados
-- [link](bd/bd.jpeg)
+# Modelo do Banco de Dados
+- [Modelo Conceitual](bd/bd.jpeg)
+= [Modelo Lógico](bd/modelo_logico.png)
 
 # Documentação
 Salão de Beleza 
