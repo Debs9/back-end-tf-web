@@ -9,7 +9,7 @@ Back-End do trabalho final da disciplina de WEB
 - [Maria Isabel Carmo Lopes](https://github.com/izinhah)
 
 # Modelo do Banco de Dados
-- [Modelo Conceitual](bd/bd.jpeg)
+- [Modelo Conceitual](bd/modelo_conceitual.png)
 - [Modelo Lógico](bd/modelo_logico.png)
 - [SQL](bd/DDL.sql)
 
