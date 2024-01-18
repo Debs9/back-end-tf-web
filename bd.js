@@ -11,10 +11,19 @@ async function connect() {
   }
 
   //bd.js
-async function selectUsuarios() {
-    const client = await connect();
-    const res = await client.query("SELECT * FROM usuario");
-    return res.rows;
-  }
+async function selectCadastrar() {
+  const client = await connect();
+  const res = await client.query("SELECT * FROM cadastrar");
+  return res.rows;
+}
 
-  export { selectUsuarios };
+export { selectCadastrar };
+
+
+async function selectAlterar() {
+  const client = await connect();
+  const res = await client.query("SELECT * FROM alterar");
+  return res.rows;
+}
+
+export { selectAlterar };
