@@ -1,8 +1,6 @@
-//bd.js
 import pkg from "pg";
 const { Pool } = pkg;
 
-//bd.js
 async function connect() {
     const pool = new Pool({
       connectionString: process.env.URL_BD,
@@ -10,7 +8,6 @@ async function connect() {
     return pool.connect();
   }
 
-  //bd.js
 async function selectCadastrar() {
   const client = await connect();
   const res = await client.query("SELECT * FROM cadastrar");
@@ -27,3 +24,13 @@ async function selectAlterar() {
 }
 
 export { selectAlterar };
+
+async function selectServicos() {
+  const client = await connect();
+  const res = await client.query("SELECT * FROM alterar");
+  return res.rows;
+}
+
+export { selectServicos };
+
+
