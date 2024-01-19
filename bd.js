@@ -27,7 +27,7 @@ export { selectAlterar };
 
 async function selectServicos() {
   const client = await connect();
-  const res = await client.query("SELECT * FROM alterar");
+  const res = await client.query("SELECT * FROM servicos");
   return res.rows;
 }
 
