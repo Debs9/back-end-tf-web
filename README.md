@@ -19,4 +19,3 @@ O site utilizado para o desenvolvimento dos modelos foi o BR Modelo Web
 
 # Documentação
 Agendamento Salão de Beleza 
-funcoes: Inserir serviços, deletar serviços, alterar serviços,
