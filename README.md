@@ -6,7 +6,7 @@ Back-End do trabalho final da disciplina de WEB
 - [Ana Luiza Ferreira Carvalho](https://github.com/Ananats00)
 - [Kauan Victor dos Santos](https://github.com/KauanVict0r)
 - [Taiza Nunes de Araujo](https://github.com/TaizaArauj0)
-- [Maria Isabel Carmo L"opes](https://github.com/izinhah)
+- [Maria Isabel Carmo Lopes](https://github.com/izinhah)
 
 # Modelo do Banco de Dados
 - [Modelo Conceitual](bd/modelo_conceitual.png)
