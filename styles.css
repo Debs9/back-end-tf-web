@@ -1,6 +1,7 @@
 body {
-    background: rgb(124, 238, 149);
+    background: rgb(227, 230, 228);
     font: normal 15pt Arial;
+    text-align: center;
 }
     
 header {
@@ -15,6 +16,7 @@ section {
     width: 500px; 
     margin: auto;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.288) (0, 0, 0, 0.363);
+    margin-bottom: 20px;
 }
 
 
@@ -25,7 +27,7 @@ div {
     
 
 footer {
-    color: white; 
+    color: rgb(2, 0, 0); 
     text-align: center;
     font-style: italic;
 }
